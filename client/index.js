@@ -28,7 +28,7 @@ document.getElementById("transfer-amount").addEventListener('click', () => {
   const amount = document.getElementById("send-amount").value;
   const recipient = document.getElementById("recipient").value;
 
-  const key1 = ec.keyFromPrivate(privateAddress);
+  const key1 = ec.keyFromPrivate(privateAddress,"hex");
 
   const signature = key1.sign("mensaje");
 

@@ -22,7 +22,7 @@ const balances = {}
 for(let i = 0 ; i < 10; i++) {
   const key = ec.genKeyPair();// generate a keypair with elliptic
   const publicKey = key.getPublic().encode('hex');
-  console.log(publicKey + " with a private key of " + key.getPrivate().toString() + " has a balance of 100");
+  console.log(publicKey + " with a private key of " + key.getPrivate().toString(16) + " has a balance of 100");
   balances[publicKey] = 100;
 }
 app.get('/balance/:address', (req, res) => {
